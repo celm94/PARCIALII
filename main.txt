@@ -26,6 +26,7 @@ public class Main {
         {
             ListaCliente obj1 = new ListaCliente();
 
+
             do{
                 System.out.println("Seleccione una opción");
                 System.out.println("1. Ver listado de clientes");
@@ -45,6 +46,7 @@ public class Main {
                 }
                 else if(op==3)
                 {
+                    obj1.VerListadoClientes();
 
                     do {
                         System.out.println("Seleccione una opción");
@@ -94,8 +96,8 @@ public class Main {
 
                 if(opp==1)
                 {
-                    System.out.println("Listado de Películas");
-                    obj2.VerListadoPeliculas();
+                    obj2.VerPeliculas();
+
                 }
                 else if(opp==2)
                 {
@@ -125,7 +127,7 @@ public class Main {
         }
 
 
-    }while(op!=3);
+    }while(op!=4);
 
 
 
