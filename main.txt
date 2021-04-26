@@ -1,0 +1,136 @@
+package parcial2;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner seleccion = new Scanner(System.in);
+    int op;
+    int opc;
+    int opp;
+    int x;
+
+
+	do{
+
+        System.out.println("**************BIENVENIDO A NECFLIS********************\n");
+
+        System.out.println("SELECCIONE UNA OPCIÓN\n");
+        System.out.println("1.Clientes");
+        System.out.println("2.Películas");
+        System.out.println("3.Salir");
+        op = Integer.parseInt(seleccion.nextLine());
+
+        if(op==1)
+        {
+            ListaCliente obj1 = new ListaCliente();
+
+            do{
+                System.out.println("Seleccione una opción");
+                System.out.println("1. Ver listado de clientes");
+                System.out.println("2. Crear nuevo cliente");
+                System.out.println("3. Seleccionar Cliente");
+                System.out.println("4.Atrás");
+                opc = Integer.parseInt(seleccion.nextLine());
+
+                if(opc==1)
+                {
+                    obj1.VerListadoClientes();
+
+                }
+                else if(opc==2)
+                {
+                    obj1.AñadirCliente();
+                }
+                else if(op==3)
+                {
+
+                    do {
+                        System.out.println("Seleccione una opción");
+                        System.out.println("1. Playlist");
+                        System.out.println("2. Agregar Película");
+                        System.out.println("3. Atrás");
+                        x = Integer.parseInt(seleccion.nextLine());
+
+                        switch (x)
+                        {
+                            case 1:
+                                System.out.println("Playlist");
+                                break;
+                            case 2:
+                                System.out.println("Agregar Película");
+                                break;
+                            case 3:
+                                System.out.println("Regresando a la página anterior...");
+
+                            default:
+                                System.out.println("Opción inválida");
+                                break;
+
+                        }
+
+
+                    }while(x!=3);
+
+
+                }
+                else{
+                    break;
+                }
+
+
+            }while(opc!=3);
+        }
+        else if(op==2)
+        {
+            ListaPelicula obj2 = new ListaPelicula();
+            do {
+                System.out.println("Seleccione una opción");
+                System.out.println("1. Ver listado de películas");
+                System.out.println("2. Crear película");
+                System.out.println("3. Salir");
+                opp = Integer.parseInt(seleccion.nextLine());
+
+                if(opp==1)
+                {
+                    System.out.println("Listado de Películas");
+                    obj2.VerListadoPeliculas();
+                }
+                else if(opp==2)
+                {
+                    obj2.AñadirPelicula();
+                }
+                else if(op==3)
+                {
+                    System.out.println("Regresando a la página anterior...");
+                    break;
+                }
+                else
+                {
+                    System.out.println("Opción inválida");
+                }
+
+
+            }while(opp!=3);
+
+        }
+        else if(op==3)
+        {
+            System.out.println("HASTA LUEGO...");
+            break;
+        }
+        else{
+            System.out.println("Opción inválida");
+        }
+
+
+    }while(op!=3);
+
+
+
+
+
+
+    }
+}
